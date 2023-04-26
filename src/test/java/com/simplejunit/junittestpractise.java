@@ -1,56 +1,51 @@
 package com.simplejunit;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
-
-
+import java.util.*;
 public class junittestpractise {
 	
  junitpractise j1=new junitpractise ();
  
 
-	@Test
-	 @DisplayName("vyshnavi")
-	public void testbiggest() {
-		int exp=6;
-		int res=j1.biggest(5,  6);
-		assertEquals(exp,res);
-		
-	}
+	
  @Test
- public void testbiggest2() {
-	 
-	 assertNotEquals(3,j1.biggest(3,  4));
+ public void testsort() {
+	 int ar[]= {5,6,8,7,9};
+	 int exp[]= {5,6,7,8,9};
+	 int res[]=j1.javasort(ar);
+	 assertArrayEquals(exp,res);
  }
  @Test
- public void checkname() {
-	 
-	assertSame("vyshnavi",j1.Whatisyourname());
+
+ public void iterableTest() {
+ List<Integer> listone=new ArrayList<>(Arrays.asList(1,2,3,4));
+ List<Integer> listtwo=new ArrayList<>(Arrays.asList(1,2,3,4));
+ assertIterableEquals(listone,listtwo);
+	
+ }
+ @Test
+ public void checkdivide() {
+	  assertThrows(ArrayIndexOutOfBoundsException.class,()->j1.divide(5,1));
  }
  
- @Test
-    public void checkname2() {
-	 
-	 assertNotEquals("java",j1.Whatisyourname());
-	 
-	 
- }
- @Test
-  public void eventest() {
-	 boolean res=j1.even(6);
-	 assertTrue(res);
- }
- @Test
- public void testodd() {
-	 boolean res=j1.even(7);
-	 assertFalse(res);
-    
-	 
- }
+ 
+ 
+ 
+ 
+ 
+private void assertIterableEquals(List<Integer> listone, List<Integer> listtwo) {
+	// TODO Auto-generated method stub
+	
+}
+ 
+ 
 }

@@ -39,5 +39,10 @@
     <scope>test</scope>
 </dependency>
 
+  	<dependency>
+  		<groupId>test</groupId>
+  		<artifactId>bankingpro</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   </dependencies>
 </project>
